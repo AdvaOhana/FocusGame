@@ -1,3 +1,5 @@
+#include "pitches.h"
+
 #define blueLed 11
 #define greenLed 10
 #define yellowLed 9
