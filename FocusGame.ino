@@ -19,6 +19,21 @@
 #define WIN 33
 #define LOSE 34
 
+const int btnsArry[LEN] = { blueBtn, greenBtn, yellowBtn, redBtn };
+const int ledsArry[LEN] = { blueLed, greenLed, yellowLed, redLed };
+const int tones[LEN] = { NOTE_C4, NOTE_G3, NOTE_A3, NOTE_F2 };
+
+int val[LEN];
+int lastVal[LEN];
+unsigned long lastPressTime[LEN];
+int ChosenIndexes[MAX_NUM_OF_LIGHTS];
+int btnsPressedIndexes[MAX_NUM_OF_LIGHTS];
+
+unsigned long pressStart;
+unsigned long pressEnd;
+int corrPress = 0;
+int cntPress = 0;
+
 void setup() {
 
 
