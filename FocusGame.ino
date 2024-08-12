@@ -79,7 +79,7 @@ int GetPressedBtn(bool restart) {
   int BtnPressed = -1;
   for (int i = 0; i < LEN; i++) {
     val[i] = digitalRead(btnsArry[i]);
-    if ((val[i] == LOW) && (lastVal[i] == HIGH) && (millis() - lastPressTime[i] > 50)) {
+    if ((val[i] == LOW) && (lastVal[i] == HIGH) && (millis() - lastPressTime[i] > 150)) {
       lastPressTime[i] = millis();
       BtnPressed = i;
       if (!restart) {
