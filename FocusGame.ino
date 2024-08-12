@@ -59,6 +59,14 @@ void ChooseRandomLights() {
   }
 }
 
+void Btn_Led_Setup() {
+  for (int i = 0; i < LEN; i++) {
+    lastVal[i] = digitalRead(btnsArry[i]);
+    lastPressTime[i] = millis();
+    LedOff(i);
+  }
+}
+
 int GetPressedBtn(bool restart) {
   int BtnPressed = -1;
   for (int i = 0; i < LEN; i++) {
