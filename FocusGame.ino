@@ -65,6 +65,18 @@ void LedOff(int chnl) {
   digitalWrite(ledsArry[chnl], LOW);
 }
 
+void ShowLights() {
+  for (int i = 0; i < MAX_NUM_OF_LIGHTS; i++) {
+    LedOn(ChosenIndexes[i]);
+  }
+  delay(1000);
+  for (int i = 0; i < MAX_NUM_OF_LIGHTS; i++) {
+    LedOff(ChosenIndexes[i]);
+  }
+  delay(500);
+  tone(BuzzTone, tones[0], 300);
+}
+
 bool valInArry(int num) {
   for (int i = 0; i < MAX_NUM_OF_LIGHTS; i++) {
     if (ChosenIndexes[i] == num) {
