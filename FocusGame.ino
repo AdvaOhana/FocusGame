@@ -54,3 +54,11 @@ void LedOff(int chnl) {
   digitalWrite(ledsArry[chnl], LOW);
 }
 
+bool valInArry(int num) {
+  for (int i = 0; i < MAX_NUM_OF_LIGHTS; i++) {
+    if (ChosenIndexes[i] == num) {
+      return true;
+    }
+  }
+  return false;
+}
