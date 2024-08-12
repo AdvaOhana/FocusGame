@@ -122,6 +122,9 @@ void StartGame() {
     btnsPressedIndexes[i] = -1;
   }
   ChooseRandomLights();
+  if (restart) {
+    delay(200);
+  }
   ShowLights();
   corrPress = 0;
   cntPress = 0;
