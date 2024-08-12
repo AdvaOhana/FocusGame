@@ -113,3 +113,17 @@ bool valInArry(int num) {
   }
   return false;
 }
+
+void StartGame() {
+  noTone(BuzzTone);
+  Btn_Led_Setup();
+  for (int i = 0; i < MAX_NUM_OF_LIGHTS; i++) {
+    ChosenIndexes[i] = -1;
+    btnsPressedIndexes[i] = -1;
+  }
+  ChooseRandomLights();
+  ShowLights();
+  corrPress = 0;
+  cntPress = 0;
+  currState = GAME_ON;
+}
