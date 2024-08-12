@@ -127,3 +127,29 @@ void StartGame() {
   cntPress = 0;
   currState = GAME_ON;
 }
+
+void GameOn() {
+  int btn = GetPressedBtn(false);
+  if (btn != -1) {
+    if (cntPress == 1) {
+      pressStart = millis();
+    }
+  }
+  if (cntPress == 3) {
+    pressEnd = millis();
+    if (btnsPressedIndexes[0] != btnsPressedIndexes[1] || btnsPressedIndexes[0] != btnsPressedIndexes[2] || btnsPressedIndexes[1] != btnsPressedIndexes[2]) {
+      int i = 0;
+      while (i < cntPress) {
+        corrPress += valInArry(btnsPressedIndexes[i++]);
+      }
+      if (corrPress == 3 && pressEnd - pressStart <= 1000) {
+        currState = WIN;
+      }
+      if (corrPress != 3 || pressEnd - pressStart > 1000) {
+        currState = LOSE;
+      }
+    } else {
+      currState = LOSE;
+    }
+  }
+}
