@@ -162,3 +162,12 @@ void Win() {
     currState = START;
   }
 }
+
+void Lose() {
+  restart = true;
+  LedOn(3);
+  tone(BuzzTone, tones[2]);
+  if (GetPressedBtn(restart) != -1) {
+    currState = START;
+  }
+}
