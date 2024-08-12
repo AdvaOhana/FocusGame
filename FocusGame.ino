@@ -14,6 +14,11 @@
 #define MAX_NUM_OF_LIGHTS 3
 #define BuzzTone 5
 
+#define START 31
+#define GAME_ON 32
+#define WIN 33
+#define LOSE 34
+
 void setup() {
 
 
