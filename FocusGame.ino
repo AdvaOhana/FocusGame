@@ -153,3 +153,12 @@ void GameOn() {
     }
   }
 }
+
+void Win() {
+  restart = true;
+  LedOn(1);
+  tone(BuzzTone, tones[1]);
+  if (GetPressedBtn(restart) != -1) {
+    currState = START;
+  }
+}
