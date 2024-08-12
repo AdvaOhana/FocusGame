@@ -33,6 +33,7 @@ unsigned long pressStart;
 unsigned long pressEnd;
 int corrPress = 0;
 int cntPress = 0;
+int currState;
 bool restart = false;
 
 void setup() {
@@ -42,6 +43,7 @@ void setup() {
   }
   pinMode(BuzzTone, OUTPUT);
   randomSeed(analogRead(A1));
+  currState = START;
 }
 
 void loop() {
