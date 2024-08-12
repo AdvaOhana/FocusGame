@@ -35,11 +35,13 @@ int corrPress = 0;
 int cntPress = 0;
 
 void setup() {
-
-
+  for (int i = 0; i < LEN; i++) {
+    pinMode(ledsArry[i], OUTPUT);
+    pinMode(btnsArry[i], INPUT_PULLUP);
+  }
+  pinMode(BuzzTone, OUTPUT);
+  randomSeed(analogRead(A1));
 }
 
 void loop() {
-
-
 }
