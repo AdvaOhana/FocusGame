@@ -58,6 +58,19 @@ void ChooseRandomLights() {
   }
 }
 
+int GetPressedBtn() {
+  int BtnPressed = -1;
+  for (int i = 0; i < LEN; i++) {
+    val[i] = digitalRead(btnsArry[i]);
+    if ((val[i] == LOW) && (lastVal[i] == HIGH) && (millis() - lastPressTime[i] > 50)) {
+      lastPressTime[i] = millis();
+      BtnPressed = i;
+    }
+    lastVal[i] = val[i];
+  }
+  return BtnPressed;
+}
+
 void LedOn(int chnl) {
   digitalWrite(ledsArry[chnl], HIGH);
 }
