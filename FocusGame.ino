@@ -47,6 +47,12 @@ void setup() {
 }
 
 void loop() {
+  switch (currState) {
+    case START: StartGame(); break;
+    case GAME_ON: GameOn(); break;
+    case WIN: Win(); break;
+    case LOSE: Lose(); break;
+  }
 }
 
 void ChooseRandomLights() {
