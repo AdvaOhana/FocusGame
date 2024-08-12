@@ -45,3 +45,12 @@ void setup() {
 
 void loop() {
 }
+
+
+void LedOn(int chnl) {
+  digitalWrite(ledsArry[chnl], HIGH);
+}
+void LedOff(int chnl) {
+  digitalWrite(ledsArry[chnl], LOW);
+}
+
