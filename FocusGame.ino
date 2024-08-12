@@ -46,6 +46,17 @@ void setup() {
 void loop() {
 }
 
+void ChooseRandomLights() {
+  int rndNum;
+  for (int i = 0; i < MAX_NUM_OF_LIGHTS; i++) {
+    rndNum = random(0, LEN);
+    if (!valInArry(rndNum)) {
+      ChosenIndexes[i] = rndNum;
+    } else {
+      i--;
+    }
+  }
+}
 
 void LedOn(int chnl) {
   digitalWrite(ledsArry[chnl], HIGH);
