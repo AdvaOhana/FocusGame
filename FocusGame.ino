@@ -33,6 +33,7 @@ unsigned long pressStart;
 unsigned long pressEnd;
 int corrPress = 0;
 int cntPress = 0;
+bool restart = false;
 
 void setup() {
   for (int i = 0; i < LEN; i++) {
@@ -58,13 +59,17 @@ void ChooseRandomLights() {
   }
 }
 
-int GetPressedBtn() {
+int GetPressedBtn(bool restart) {
   int BtnPressed = -1;
   for (int i = 0; i < LEN; i++) {
     val[i] = digitalRead(btnsArry[i]);
     if ((val[i] == LOW) && (lastVal[i] == HIGH) && (millis() - lastPressTime[i] > 50)) {
       lastPressTime[i] = millis();
       BtnPressed = i;
+      if (!restart) {
+        btnsPressedIndexes[cntPress] = i;
+        cntPress++;
+      }
     }
     lastVal[i] = val[i];
   }
